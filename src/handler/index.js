@@ -37,7 +37,7 @@ module.exports = async (client) => {
 
     const arrayOfSlashCommands = [];
 
-    slashCommands.map((value) => {
+    await Promise.all(slashCommands.map((value) => {
         
         const file = require(value);
 
@@ -46,7 +46,7 @@ module.exports = async (client) => {
 
         if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
         arrayOfSlashCommands.push(file);
-    });
+    }));
 
     client.on("ready", async () => {
 
