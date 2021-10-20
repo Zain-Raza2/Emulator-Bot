@@ -26,7 +26,7 @@ module.exports = {
         if (channel.type == 'GUILD_VOICE') {
             discordTogether
                 .createTogetherCode(channelID, "emulate")
-                .then((x) => interaction.reply(x.code))
+                .then((x) => interaction.followUp(x.code))
         } else {
             return interaction.followUp({
                 content: "Please choose a voice channel",
