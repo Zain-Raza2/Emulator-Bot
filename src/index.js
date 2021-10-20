@@ -1,4 +1,5 @@
-const { Client, Collection } = require('discord.js')
+const { Client, Collection, PermissionOverwrites } = require('discord.js')
+require('dotenv').config()
 
 // Client
 
@@ -9,7 +10,7 @@ const client = new Client({
         "GUILD_MESSAGES",
         "GUILD_INVITES",
         "GUILD_VOICE_STATES",
-    ]
+    ],
 })
 
 module.exports = client
@@ -24,4 +25,4 @@ client.slashCommands = new Collection()
 
 require("./handler")(client)
 
-client.login(client.config.token)
+client.login(process.env.TOKEN)

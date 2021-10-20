@@ -4,6 +4,9 @@ const { Client } = require("discord.js");
 
 const globPromise = promisify(glob);
 
+/**
+ * @param {Client} client
+ */
 module.exports = async (client) => {
 
     // Commands
@@ -22,10 +25,12 @@ module.exports = async (client) => {
     });
 
     // Events
+
     const eventFiles = await globPromise(`${process.cwd()}/events/*.js`);
     eventFiles.map((value) => require(value));
 
     // Slash Commands
+
     const slashCommands = await globPromise(
         `${process.cwd()}/SlashCommands/*/*.js`
     );
@@ -35,6 +40,7 @@ module.exports = async (client) => {
     slashCommands.map((value) => {
         
         const file = require(value);
+
         if (!file?.name) return;
         client.slashCommands.set(file.name, file);
 
@@ -47,7 +53,7 @@ module.exports = async (client) => {
         // Register for a single guild
 
         await client.guilds.cache
-            .get("guild id goes here")
+            .get(`${process.env.GUILDID}`)
             .commands.set(arrayOfSlashCommands);
     });
 };
