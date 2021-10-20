@@ -1,0 +1,8 @@
+{
+  "name": "emulatorbot",
+  "version": "1.0.0",
+  "description": "A discord emulator bot",
+  "main": "index.js",
+  "author": "Zain Raza",
+  "license": "MIT"
+}
