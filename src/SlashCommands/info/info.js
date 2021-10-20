@@ -1,8 +1,9 @@
-const { CommandInteraction, Client } = require("discord.js")
+const { Client, CommandInteraction } = require("discord.js")
 
 module.exports = {
     name: "info",
     description: "Gives basic information on how to use the bot",
+    types: "CHAT_INPUT",
 
     /**
      * 

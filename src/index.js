@@ -21,7 +21,7 @@ client.commands = new Collection()
 client.config = require("../config.json")
 client.slashCommands = new Collection()
 
-// Initialion
+// Initialization
 
 require("./handler")(client)
 
