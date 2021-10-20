@@ -53,7 +53,8 @@ module.exports = async (client) => {
         // Register for a single guild
 
         await client.guilds.cache
-            .get(`${process.env.GUILDID}`)
+            .get(`${process.env.GUILD_ID}`)
             .commands.set(arrayOfSlashCommands);
+            console.log(arrayOfSlashCommands)
     });
 };

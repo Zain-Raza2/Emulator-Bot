@@ -1,4 +1,4 @@
-const { Client, Collection, PermissionOverwrites } = require('discord.js')
+const { Client, Collection } = require('discord.js')
 require('dotenv').config()
 
 // Client
@@ -18,11 +18,11 @@ module.exports = client
 // Global Variables 
 
 client.commands = new Collection()
-client.config = require("../config.json")
 client.slashCommands = new Collection()
+client.config = require("../config.json")
 
 // Initialization
 
 require("./handler")(client)
 
-client.login(process.env.TOKEN)
+client.login(process.env.DISCORD_TOKEN)
