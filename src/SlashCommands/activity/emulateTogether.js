@@ -1,5 +1,5 @@
-import { CommandInteraction, Client} from 'discord.js'
-import {} from 'discord-together'
+const { CommandInteraction, Client} = require('discord.js')
+require('discord-together')
 
 module.exports = {
     name: "together", 

@@ -1,4 +1,4 @@
-import { Client, Collection } from 'discord.js'
+const { Client, Collection } = require('discord.js')
 
 // Client
 
@@ -6,7 +6,6 @@ const client = new Client({
     intents: [
         "GUILDS",
         "GUILD_MEMBERS",
-        "GUILDS_EMOJIS",
         "GUILD_MESSAGES",
         "GUILD_INVITES",
         "GUILD_VOICE_STATES",

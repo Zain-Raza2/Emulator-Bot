@@ -3,4 +3,4 @@ import client from '../index'
 
 const DiscordTogether = new DiscordTogether(client)
 
-module.exports = DiscordTogether
+export default DiscordTogether
